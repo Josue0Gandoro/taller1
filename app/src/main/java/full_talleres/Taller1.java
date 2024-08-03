@@ -27,12 +27,30 @@ public class Taller1 {
      y la convierta a metros/seg y a metros/hora. Retorne un string del tipo: ### m/s - ### m/h. Si hay error, 
      devuelva el string "Error en la conversion"
     */
-    
+    public static String Convertir_km_seg(int velocidad) {
+        try {
+            int metros = 1000, segundos = 3600;
+            int metros_seg = velocidad * metros;
+            int metros_hora = velocidad * metros * segundos;
+            return metros_seg + " m/s - " + metros_hora + " m/h";
+        } catch (Exception e) {
+            return "Error en la conversion";
+        }
+    }
     
 
     /*3. Diseñe un algoritmo e implemente la función Convertir_cm_lt que: reciba una cantidad double expresada en 
     cc (centímetros cúbicos) y devuelva un float con su equivalente en litros. Si hay algún error, retorne 0.
     */
+    public static float Convertir_cm_lt(double CC) {
+        try {
+            int litro = 1000;
+            float C_Litros = (float)(CC / litro);
+            return C_Litros;
+        } catch (Exception e) {
+            return 0;
+         }
+    }
   
     
 
@@ -41,7 +59,15 @@ public class Taller1 {
    y devuelva su equivalente en pesos usando una TRM de $4170 pesos por cada dólar. La función recibe enteros
    y devuelve enteros, pueden ser grandes. Si hay algún error, retorne -1.
    */
-   
+    public static int Convertir_us_cops(int dolares) {
+        try {
+            int Cambio = 4052;
+            int COP = dolares * Cambio;
+            return COP;
+        } catch (Exception e) {
+            return -1;
+        }
+    }
     
   
    
@@ -49,7 +75,14 @@ public class Taller1 {
    centígrados y la devuelve en grados Fahrenheit (averiguar la fórmula) F = 32 + ( 9 * C / 5). Si hay algún error, 
    retorne 0.
    */
-
+    public static double Convertir_cent_far(double GradosC) {
+        try {
+            double gradosF = 32 + ((9.0 * GradosC) / 5.0);
+            return gradosF;
+        } catch (Exception e) {
+            return 0;
+        }
+    }
           
 
    
@@ -57,6 +90,17 @@ public class Taller1 {
    el número de minutos y número segundos como enteros bytes, positivos y devuelva todo en segundos en un entero. 
    Si hay algún error, devuelva -1.
    */
+    public static int Calcular_segs(byte dias, byte horas, byte minutos, byte segundos) {
+        try {
+            int Dia = 86400;
+            int Hora = 3600;
+            int Minuto = 60;
+            int totalSegundos = ((dias * Dia) + (horas * Hora) + (minutos * Minuto) + segundos);
+            return totalSegundos;
+        } catch (Exception e) {
+            return -1;
+        }
+    }
 
    
 
@@ -73,7 +117,14 @@ public class Taller1 {
    otro dato short que es la velocidad  promedio que alcanzará también el vehículo en kilómetros/hora.  
    Si hay algún error, devuelva -1.
    */
-
+    public static float Calcular_horasxviaje(String destino, short distancia, short velocidad) {
+        try {
+            float horas = (float) distancia / velocidad;
+            return horas;
+        } catch (Exception e) {
+            return -1;
+        }
+    }
   
    
    /*9.	Un avión necesita cargar combustible para cubrir sus rutas programadas en el día. 
@@ -96,7 +147,16 @@ public class Taller1 {
    
    Si hay algún error, devuelva 0.
    */
-   
+    public static double Calcular_peso_luna(byte pesoKilos) {
+        try {
+            final double GRAVEDAD_TIERRA = 9.81, FACTOR_LUNA = 0.165d;
+            double peso_tierra_new = pesoKilos * GRAVEDAD_TIERRA;
+            double peso_luna_new = peso_tierra_new * FACTOR_LUNA;
+            return peso_luna_new;
+        } catch (Exception e) {
+            return 0;
+        }
+    }
    
    
 }
