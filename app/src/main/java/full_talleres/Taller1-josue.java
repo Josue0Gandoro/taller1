@@ -27,13 +27,36 @@ public class Taller1 {
      y la convierta a metros/seg y a metros/hora. Retorne un string del tipo: ### m/s - ### m/h. Si hay error, 
      devuelva el string "Error en la conversion"
     */
-    
+    public static String Convertir_km_seg(int velocidad) {
+        try {
+            int metros = 1000, segundos = 3600;
+            int metros_seg = velocidad * metros;
+            int metros_hora = velocidad * metros * segundos;
+
+            if (velocidad < 0) {
+                return "Error en la conversion";
+            }
+            return metros_seg + " m/s - " + metros_hora + " m/h";
+        } catch (Exception e) {
+            return "Error en la conversion";
+        }
+    }
     
 
     /*3. Diseñe un algoritmo e implemente la función Convertir_cm_lt que: reciba una cantidad double expresada en 
     cc (centímetros cúbicos) y devuelva un float con su equivalente en litros. Si hay algún error, retorne 0.
     */
-  
+    public static float Convertir_cm_lt(double CC) {
+        try {
+            int litro = 1000;
+            if (CC < 0) {
+                return 0;}
+            float C_Litros = (float)(CC / litro);
+            return C_Litros;
+        } catch (Exception e) {
+            return 0;
+        }
+    }
     
 
   
